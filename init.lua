@@ -515,6 +515,8 @@ require('lazy').setup({
             vim.keymap.set(mode, keys, func, { buffer = event.buf, desc = 'LSP: ' .. desc })
           end
 
+          -- Show description of function when hovered over with cursor
+          map('<leader>h', vim.lsp.buf.hover, '[H]over')
           -- Jump to the definition of the word under your cursor.
           --  This is where a variable was first declared, or where a function is defined, etc.
           --  To jump back, press <C-t>.
@@ -622,6 +624,7 @@ require('lazy').setup({
         -- But for many setups, the LSP (`ts_ls`) will work just fine
         -- ts_ls = {},
         --
+        jedi_language_server = {},
 
         lua_ls = {
           -- cmd = {...},
@@ -814,6 +817,9 @@ require('lazy').setup({
 
           -- For more advanced Luasnip keymaps (e.g. selecting choice nodes, expansion) see:
           --    https://github.com/L3MON4D3/LuaSnip?tab=readme-ov-file#keymaps
+        },
+        experimental = {
+          ghost_text = true,
         },
         sources = {
           {
