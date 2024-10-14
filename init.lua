@@ -1,5 +1,5 @@
 require 'custom.keymaps' --mine egne keymaps
--- Leste sist linje 152
+require 'custom.options'
 --[[
 
 =====================================================================
@@ -516,7 +516,7 @@ require('lazy').setup({
           end
 
           -- Show description of function when hovered over with cursor
-          map('<leader>h', vim.lsp.buf.hover, '[H]over')
+          map('gh', vim.lsp.buf.hover, '[H]over')
           -- Jump to the definition of the word under your cursor.
           --  This is where a variable was first declared, or where a function is defined, etc.
           --  To jump back, press <C-t>.
@@ -783,13 +783,13 @@ require('lazy').setup({
           -- Accept ([y]es) the completion.
           --  This will auto-import if your LSP supports it.
           --  This will expand snippets if the LSP sent a snippet.
-          -- ['<C-y>'] = cmp.mapping.confirm { select = true },
+          ['<C-y>'] = cmp.mapping.confirm { select = true },
 
           -- If you prefer more traditional completion keymaps,
           -- you can uncomment the following lines
-          ['<CR>'] = cmp.mapping.confirm { select = true },
-          ['<Tab>'] = cmp.mapping.select_next_item(),
-          ['<S-Tab>'] = cmp.mapping.select_prev_item(),
+          -- ['<CR>'] = cmp.mapping.confirm { select = true },
+          -- ['<Tab>'] = cmp.mapping.select_next_item(),
+          -- ['<S-Tab>'] = cmp.mapping.select_prev_item(),
 
           -- Manually trigger a completion from nvim-cmp.
           --  Generally you don't need this, because nvim-cmp will display
